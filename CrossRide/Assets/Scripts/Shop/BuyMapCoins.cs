@@ -7,7 +7,7 @@ public class BuyMapCoins : MonoBehaviour {
     public GameObject coins1000, coins5000, money0_99, money1_99, city_btn, megapolis_btn;
     public Animation coinsText;
     public Text coinsCount;
-    
+
     public void BuyNewMap(int needCoins) {
         int coins = PlayerPrefs.GetInt("Coins");
         if (coins < needCoins) {

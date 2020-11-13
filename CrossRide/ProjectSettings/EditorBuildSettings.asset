@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/FolderForGame/CrossRide/Scenes/Game.unity
+    path: Assets/Scenes/Game.unity
     guid: 59c2dcb283250467cbc79e3a7373f979
   - enabled: 1
-    path: Assets/FolderForGame/CrossRide/Scenes/Main.unity
+    path: Assets/Scenes/Main.unity
     guid: 0dbc820e0c99c404ea8afb4846f96707
   - enabled: 1
-    path: Assets/FolderForGame/CrossRide/Scenes/Shop.unity
+    path: Assets/Scenes/Shop.unity
     guid: efbdcae06b6584d86924186abf66ceb6
   - enabled: 1
-    path: Assets/FolderForGame/CrossRide/Scenes/Study.unity
+    path: Assets/Scenes/Study.unity
     guid: 47cbd76dec2404afbb78813fa1f90248
   m_configObjects: {}
