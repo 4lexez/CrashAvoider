@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class TimeChanger : MonoBehaviour
 {
-    public int howMuchItCanBeUsed;
-    public Sprite btn, btnDisabled;
-    public Image timeImage;
-    public GameObject TimeBtn;
-    public Text Counter;
-    public AudioSource TimeSound;
-    private bool isLose;
+    [SerializeField] private int howMuchItCanBeUsed;
+    [SerializeField] private Sprite btn, btnDisabled;
+    [SerializeField] private Image timeImage;
+    [SerializeField] private GameObject TimeBtn;
+    [SerializeField] private Text Counter;
+    [SerializeField] private AudioSource TimeSound;
+    [SerializeField] private bool isLose;
     private void Start()
     {
         if(PlayerPrefs.GetInt("Time") == 0)
@@ -43,7 +43,7 @@ public class TimeChanger : MonoBehaviour
     }
     public void WhenCarWrecked(bool isLose)
     {
-        if (isLose)
+        if (isLose && TimeBtn.activeSelf)
         {
             TimeBtn.SetActive(false);
             StopCoroutine(TimeFrozing());

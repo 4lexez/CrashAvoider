@@ -6,18 +6,18 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour {
 
-    public AudioClip crash;
-    public AudioClip[] accelerates;
+    [SerializeField] private AudioClip crash;
+    [SerializeField] private AudioClip[] accelerates;
     public bool rightTurn, leftTurn, moveFromUp;
     public float speed = 15f, force = 50f;
-    private Rigidbody carRb;
-    private float originRotationY, rotateMultRight = 6f, rotateMultLeft = 4.5f;
-    private Camera mainCam;
-    public LayerMask carsLayer;
-    private bool isMovingFast, carCrashed;
+    [SerializeField] private Rigidbody carRb;
+    [SerializeField] private float originRotationY, rotateMultRight = 6f, rotateMultLeft = 4.5f;
+    [SerializeField] private Camera mainCam;
+    [SerializeField] private LayerMask carsLayer;
+    [SerializeField] private bool isMovingFast, carCrashed;
     [NonSerialized] public bool carPassed;
     [NonSerialized] public static bool isLose;
-    public GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
+    [SerializeField] private GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
     TimeChanger timeChanger;
     [NonSerialized] public static int countCars;
 
@@ -25,7 +25,7 @@ public class CarController : MonoBehaviour {
 
         mainCam = Camera.main;
         originRotationY = transform.eulerAngles.y;
-        carRb = GetComponent<Rigidbody>();
+        carRb = GetComponent<Rigidbody>(); 
         if (GameObject.Find("TimeChanging"))
             timeChanger = GameObject.Find("TimeChanging").GetComponent<TimeChanger>();
         if (rightTurn)
@@ -45,44 +45,34 @@ public class CarController : MonoBehaviour {
     private void FixedUpdate() {
         carRb.MovePosition(transform.position - transform.forward * speed * Time.fixedDeltaTime);
     }
-
-    private void Update() {
-#if UNITY_EDITOR
-        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
-#else
-        if (Input.touchCount == 0)
-            return;
-        
-        Ray ray = mainCam.ScreenPointToRay(Input.GetTouch(0).position);
-#endif
-        
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100f, carsLayer)) {
-            string carName = hit.transform.gameObject.name;
+    private void OnMouseDown()
+    {
+        string carName = transform.gameObject.name;
 
 #if UNITY_EDITOR
-            if (Input.GetMouseButtonDown(0) && !isMovingFast && gameObject.name == carName) {
+        if (!isMovingFast)
+        {
 #else
             if (Input.GetTouch(0).phase == TouchPhase.Began && !isMovingFast && gameObject.name == carName) {
 #endif
-                GameObject vfx = Instantiate(exhaust, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.Euler(90, 0, 0)) as GameObject;
-                Destroy(vfx, 2f);
-                speed *= 2f;
-                isMovingFast = true;
-                if (PlayerPrefs.GetString("music") != "No") {
-                    GetComponent<AudioSource>().clip = accelerates[Random.Range(0, accelerates.Length)];
-                    GetComponent<AudioSource>().Play();
-                }
+            GameObject vfx = Instantiate(exhaust, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.Euler(90, 0, 0)) as GameObject;
+            Destroy(vfx, 2f);
+            speed *= 2f;
+            isMovingFast = true;
+            if (PlayerPrefs.GetString("music") != "No")
+            {
+                GetComponent<AudioSource>().clip = accelerates[Random.Range(0, accelerates.Length)];
+                GetComponent<AudioSource>().Play();
             }
         }
     }
 
+
     private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Car") && !carCrashed) {
             carCrashed = true;
-            isLose = true;
-            timeChanger.WhenCarWrecked(isLose);
+            IsDead();
+            //timeChanger.WhenCarWrecked(true);
             speed = 0f;
             other.gameObject.GetComponent<CarController>().speed = 0f;
 
@@ -139,18 +129,20 @@ public class CarController : MonoBehaviour {
             Destroy(gameObject);
         }
 
-    private void RotateCar(float speedRotate, int dir = 1) {
+    private void RotateCar(float speedRotate, int dir = 1)
+    {
         if (carCrashed)
             return;
-        
+
         if (dir == -1 && transform.localRotation.eulerAngles.y < originRotationY - 90f)
             return;
         if (dir == -1 && moveFromUp && transform.localRotation.eulerAngles.y > 250f && transform.localRotation.eulerAngles.y < 270f)
             return;
-        
+
         float rotateSpeed = speed * speedRotate * dir;
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, rotateSpeed, 0) * Time.fixedDeltaTime);
         carRb.MoveRotation(carRb.rotation * deltaRotation);
     }
+    private void IsDead() { GameController.ActionDead?.Invoke(); }
     
 }
