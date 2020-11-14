@@ -18,11 +18,13 @@ public class CanvasButtons : MonoBehaviour {
     }
 
     public void MusicButton() {
-        if (PlayerPrefs.GetString("music") == "No") { // Turn on
+        if (PlayerPrefs.GetString("music") == "No")
+        { // Turn on
             PlayerPrefs.SetString("music", "Yes");
             transform.GetChild(0).GetComponent<Image>().sprite = musicOn;
         }
-        else { // Turn off
+        else
+        { // Turn off
             PlayerPrefs.SetString("music", "No");
             transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
         }

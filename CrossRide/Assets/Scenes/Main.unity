@@ -157,6 +157,8 @@ MonoBehaviour:
   canvasLosePanel: {fileID: 497470555}
   timeToSpawnFrom: 2
   timeToSpawnTo: 4.5
+  countCars: 0
+  isLoseOnce: 0
   nowScore: {fileID: 0}
   topScore: {fileID: 0}
   coinsCount: {fileID: 0}
@@ -264,6 +266,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 26740333}
         m_MethodName: MusicButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 795703821}
+        m_MethodName: OnSoundButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1192,6 +1205,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743954357}
   m_CullTransparentMesh: 0
+--- !u!114 &795703821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3842438216254620960, guid: 8762f285a3f06c64d8c34b561952af8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3842438216809676589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954b9df7bfa1bb64cb8734ae3e6ef9ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &818053415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,3 +2994,88 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.104263, y: 1, z: 6}
   m_Center: {x: -0.6221311, y: 0, z: -0.43000007}
+--- !u!1001 &3842438216809676589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620961, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620966, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620966, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: c83d774e0787ae947a30244e19c8fe39,
+        type: 2}
+    - target: {fileID: 3842438216254620967, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842438216254620967, guid: 8762f285a3f06c64d8c34b561952af8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8762f285a3f06c64d8c34b561952af8b, type: 3}
