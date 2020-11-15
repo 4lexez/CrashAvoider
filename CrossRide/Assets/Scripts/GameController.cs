@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] private bool isLoseOnce;
     [SerializeField] private Text nowScore, topScore, coinsCount;
     [SerializeField] private GameObject AdManager;
+    private TimeChanger timeChanger;
     public static bool IsAdd;
     public static bool IsStartTimeAdded;
     [SerializeField] private GameObject environment;
@@ -27,8 +28,10 @@ public class GameController : MonoBehaviour {
     private float rotateCarTo;
     private bool IsFromUp;
     public static Action ActionDead;
+    private int LastRandom;
 
     private void Start() {
+        timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;
         if (environment != null)
             environment.transform.GetChild(PlayerPrefs.GetInt("NowMap") - 1).gameObject.SetActive(true);
@@ -50,29 +53,10 @@ public class GameController : MonoBehaviour {
 
         StartCoroutine(Spawning());
     }
-
-    /*private void Update()
-    { // НЕ ОБРАЩАЙ ВНИМАНИЯ, Я ЕЩЕ НЕ УСПЕЛ УБРАТЬ ЕГО
-        if (CarController.isLose && !isLoseOnce)
-        {
-            StopCoroutine(Spawning());
-            nowScore.text = "<color=#F65757>Score:</color> " + CarController.countCars.ToString();
-            if (PlayerPrefs.GetInt("Score") < CarController.countCars)
-                PlayerPrefs.SetInt("Score", CarController.countCars);
-
-            topScore.text = "<color=#F65757>Top:</color> " + PlayerPrefs.GetInt("Score").ToString();
-
-            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
-            coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
-
-            canvasLosePanel.SetActive(true);
-            isLoseOnce = true;
-        }
-    }*/
     public void Dead()
     {
-        print("Crash");
         StopCoroutine(Spawning());
+        timeChanger.WhenCarWrecked();
         nowScore.text = "<color=#F65757>Score:</color> " + CarController.countCars.ToString();
         if (PlayerPrefs.GetInt("Score") < CarController.countCars)
             PlayerPrefs.SetInt("Score", CarController.countCars);
@@ -87,10 +71,11 @@ public class GameController : MonoBehaviour {
     }
     IEnumerator Spawning()
     {
+        int random = 0;
         while (!isLoseOnce)
-        {
-            int random = Random.Range(0, vectors.Length);
-            //int random = 0;
+            {
+            
+            if (random > 3) random = 0;
             IsFromUp = false;
 
             switch (random)
@@ -111,6 +96,7 @@ public class GameController : MonoBehaviour {
             }
             SpawnCar(vectors[random], rotateCarTo, IsFromUp);
             float timeToSpawn = Random.Range(timeToSpawnFrom, timeToSpawnTo);
+            random++;
             yield return new WaitForSeconds(timeToSpawn);
         }
     }

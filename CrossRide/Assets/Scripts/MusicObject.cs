@@ -5,6 +5,7 @@ using UnityEngine;
 public class MusicObject : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
+    //[SerializeField] private AudioMixer mixer;
     private bool IsSpawned;
     void Start()
     {
@@ -26,7 +27,7 @@ public class MusicObject : MonoBehaviour
     public void OnSoundButtonClick()
     {
      audioSource.mute = !audioSource.mute;
-
+        
     }
 }
 

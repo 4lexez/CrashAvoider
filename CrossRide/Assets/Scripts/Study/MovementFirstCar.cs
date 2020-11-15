@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MovementFirstCar : MonoBehaviour {
 
-    public GameObject canvasFirst, secondCar, secondCanvas;
+    [SerializeField] private GameObject canvasFirst, secondCar, secondCanvas;
     private bool isFirst;
     private CarController _controller;
 

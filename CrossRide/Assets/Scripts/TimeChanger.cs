@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,12 +11,12 @@ public class TimeChanger : MonoBehaviour
     [SerializeField] private GameObject TimeBtn;
     [SerializeField] private Text Counter;
     [SerializeField] private AudioSource TimeSound;
-    [SerializeField] private bool isLose;
+    //[SerializeField] private bool isLose;
     private void Start()
     {
         if(PlayerPrefs.GetInt("Time") == 0)
             timeImage.sprite = btnDisabled;
-
+        changeTime(1);
         howMuchItCanBeUsed = PlayerPrefs.GetInt("Time");
         timeImage = GetComponent<Image>();
         Counter.text = howMuchItCanBeUsed.ToString();
@@ -34,29 +33,30 @@ public class TimeChanger : MonoBehaviour
             if (PlayerPrefs.GetString("music") != "No")
                 TimeSound.Play();
             Counter.text = howMuchItCanBeUsed.ToString();
-            
-        }
-        if(howMuchItCanBeUsed < 1 && !btnDisabled)
-        {
-            timeImage.sprite = btnDisabled;
+            if (howMuchItCanBeUsed <= 0 && timeImage.sprite != btnDisabled)
+            {
+                timeImage.sprite = btnDisabled;
+            }
         }
     }
-    public void WhenCarWrecked(bool isLose)
+    public void WhenCarWrecked()
     {
-        if (isLose && TimeBtn.activeSelf)
+        if (TimeBtn.activeSelf)
         {
             TimeBtn.SetActive(false);
             StopCoroutine(TimeFrozing());
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            changeTime(1);
         }
     }
     IEnumerator TimeFrozing()
     {
-        Time.timeScale *= 0.5f;
-        Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        changeTime(0.5f);
         yield return new WaitForSeconds(2f);
-        Time.timeScale /= 0.5f;
+        changeTime(1);
+    }
+    private void changeTime(float time)
+    {
+        Time.timeScale = time;
         Time.fixedDeltaTime = 0.02F * Time.timeScale;
     }
 }

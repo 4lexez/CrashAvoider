@@ -7,21 +7,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6285275028370298025, guid: ca6a542169d8e474aa2c2cb47423839a,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6285275028370298025, guid: ca6a542169d8e474aa2c2cb47423839a,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
       propertyPath: m_Name
       value: Jeep Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9144096
+      value: -28.34096
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 5.856826
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.740309
+      value: -34.887283
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -108,6 +118,10 @@ PrefabInstance:
       propertyPath: force
       value: 1200
       objectReference: {fileID: 0}
+    - target: {fileID: 87932330, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
+      propertyPath: TurnSignal
+      value: 
+      objectReference: {fileID: 8300000, guid: 934ec5755b3904d8bb1063b723bf0389, type: 3}
     - target: {fileID: 3885857338200947170, guid: ca6a542169d8e474aa2c2cb47423839a,
         type: 3}
       propertyPath: m_LocalPosition.z

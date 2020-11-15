@@ -2,7 +2,7 @@
 
 public class ChooseMap : MonoBehaviour {
 
-    public AudioClip btnClick;
+    [SerializeField] private AudioClip btnClick;
     
     public void ChooseNewMap(int numberMap) {
         if (PlayerPrefs.GetString("music") != "No") {

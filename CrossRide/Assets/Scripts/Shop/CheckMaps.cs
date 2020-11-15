@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class CheckMaps : MonoBehaviour {
 
-    public Image[] maps;
-    public Sprite selected, notSelected;
+    [SerializeField] private Image[] maps;
+    [SerializeField] private Sprite selected, notSelected;
     private BuyMapCoins _mapCoins;
 
     private void Start() {

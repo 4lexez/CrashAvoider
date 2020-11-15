@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class BuyNewTime : MonoBehaviour
 {
-    public AudioClip success, fail;
-    public Animation coinsText;
-    public Text coinsCount;
-    public Text timeCount;
-    [NonSerialized] public int TimeCount;
+    [SerializeField] private AudioClip success, fail;
+    [SerializeField] private Animation coinsText;
+    [SerializeField] private Text coinsCount;
+    [SerializeField] private Text timeCount;
+    private int TimeCount;
 
     private void Start()
     {

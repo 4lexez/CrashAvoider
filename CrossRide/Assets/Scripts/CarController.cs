@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour {
 
-    [SerializeField] private AudioClip crash;
+    [SerializeField] private AudioClip crash, TurnSignal;
     [SerializeField] private AudioClip[] accelerates;
     public bool rightTurn, leftTurn, moveFromUp;
     public float speed = 15f, force = 50f;
@@ -18,7 +18,6 @@ public class CarController : MonoBehaviour {
     [NonSerialized] public bool carPassed;
     [NonSerialized] public static bool isLose;
     [SerializeField] private GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
-    TimeChanger timeChanger;
     [NonSerialized] public static int countCars;
 
     private void Start() {
@@ -26,8 +25,7 @@ public class CarController : MonoBehaviour {
         mainCam = Camera.main;
         originRotationY = transform.eulerAngles.y;
         carRb = GetComponent<Rigidbody>(); 
-        if (GameObject.Find("TimeChanging"))
-            timeChanger = GameObject.Find("TimeChanging").GetComponent<TimeChanger>();
+
         if (rightTurn)
             StartCoroutine(TurnSignals(turnRightSignal));
         else if (leftTurn)
@@ -37,6 +35,11 @@ public class CarController : MonoBehaviour {
     IEnumerator TurnSignals(GameObject turnSignal) {
         while (!carPassed) {
             turnSignal.SetActive(!turnSignal.activeSelf);
+            /*if (PlayerPrefs.GetString("music") != "No")
+            {
+                GetComponent<AudioSource>().clip = TurnSignal;
+                GetComponent<AudioSource>().Play();
+            }*/
             yield return new WaitForSeconds(0.5f);
         }
         turnSignal.SetActive(false);
@@ -72,7 +75,6 @@ public class CarController : MonoBehaviour {
         if (other.gameObject.CompareTag("Car") && !carCrashed) {
             carCrashed = true;
             IsDead();
-            //timeChanger.WhenCarWrecked(true);
             speed = 0f;
             other.gameObject.GetComponent<CarController>().speed = 0f;
 
@@ -138,6 +140,7 @@ public class CarController : MonoBehaviour {
             return;
         if (dir == -1 && moveFromUp && transform.localRotation.eulerAngles.y > 250f && transform.localRotation.eulerAngles.y < 270f)
             return;
+
 
         float rotateSpeed = speed * speedRotate * dir;
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, rotateSpeed, 0) * Time.fixedDeltaTime);

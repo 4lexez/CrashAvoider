@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class BuyMapCoins : MonoBehaviour {
 
-    public AudioClip success, fail;
+    [SerializeField] private AudioClip success, fail;
     public GameObject coins1000, coins5000, money0_99, money1_99, city_btn, megapolis_btn;
-    public Animation coinsText;
-    public Text coinsCount;
+    [SerializeField] private Animation coinsText;
+    [SerializeField] private Text coinsCount;
 
     public void BuyNewMap(int needCoins) {
         int coins = PlayerPrefs.GetInt("Coins");

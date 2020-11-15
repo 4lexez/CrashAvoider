@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CanvasButtons : MonoBehaviour {
-    
-    public Sprite btn, btnPressed, musicOn, musicOff;
+
+    [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;
     private Image image;
 
     void Start() {
