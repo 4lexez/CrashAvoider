@@ -10,6 +10,7 @@ TagManager:
   - TurnBlock Right
   - TurnBlock Left
   - Cube
+  - CarTrigger
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - PostProcessing
   - Cars
   - Ground
-  - 
+  - Trigger
   - 
   - 
   - 

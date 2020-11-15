@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour {
     [SerializeField] private float originRotationY, rotateMultRight = 6f, rotateMultLeft = 4.5f;
     [SerializeField] private Camera mainCam;
     [SerializeField] private LayerMask carsLayer;
-    [SerializeField] private bool isMovingFast, carCrashed;
+    public bool isMovingFast, carCrashed, nearCrash;
     [NonSerialized] public bool carPassed;
     [NonSerialized] public static bool isLose;
     [SerializeField] private GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
@@ -102,11 +102,6 @@ public class CarController : MonoBehaviour {
             RotateCar(rotateMultLeft, -1);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Car") && other.GetComponent<CarController>().carPassed)
-            other.GetComponent<CarController>().speed = speed + 5f;
-    }
-
     private void OnTriggerExit(Collider other) {
         if (carCrashed)
             return;
@@ -147,5 +142,17 @@ public class CarController : MonoBehaviour {
         carRb.MoveRotation(carRb.rotation * deltaRotation);
     }
     private void IsDead() { GameController.ActionDead?.Invoke(); }
-    
+    public void CallCoroutine()
+    {
+        StartCoroutine(NearCrash());
+    }
+    private IEnumerator NearCrash()
+    {
+        while (speed >= 0)
+        {
+            speed = speed * 0.75f - Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        nearCrash = true;
+    }
 }

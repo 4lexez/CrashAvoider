@@ -154,10 +154,10 @@ MonoBehaviour:
   cars:
   - {fileID: 100008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
   - {fileID: 100008, guid: 1989787f5d4f08647a723f7cb7df5f05, type: 3}
-  - {fileID: 2667331749684423199, guid: d2dd8305ed830614096dd7b427e0acf0, type: 3}
+  - {fileID: 504355176687900411, guid: d2dd8305ed830614096dd7b427e0acf0, type: 3}
   canvasLosePanel: {fileID: 497470555}
-  timeToSpawnFrom: 2
-  timeToSpawnTo: 4.5
+  timeToSpawnFrom: 1
+  timeToSpawnTo: 3
   countCars: 0
   isLoseOnce: 0
   nowScore: {fileID: 0}
