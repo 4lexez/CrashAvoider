@@ -13,7 +13,8 @@ public class TriggerForward : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car"))
         {
-            if (other.GetComponent<CarController>().carCrashed || other.GetComponent<CarController>().nearCrash)
+            CarController otherCntrl = other.GetComponent<CarController>();
+            if (otherCntrl.carCrashed || otherCntrl.nearCrash)
                 ThisController.CallCoroutine();
         }
     }

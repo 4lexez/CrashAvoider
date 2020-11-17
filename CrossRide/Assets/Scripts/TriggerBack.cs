@@ -11,13 +11,16 @@ public class TriggerBack : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Car") 
-            && !other.GetComponent<CarController>().carCrashed 
-            && !ThisController.carCrashed 
-            && !other.GetComponent<CarController>().nearCrash)
-        {
-            ThisController.speed = other.GetComponent<CarController>().speed;
-            ThisController.isMovingFast = true;
+        if (other.gameObject.CompareTag("Car")) {
+            CarController otherCntrl = other.GetComponent<CarController>();
+            if (!otherCntrl.carCrashed
+            && !ThisController.carCrashed
+            && !otherCntrl.nearCrash)
+            {
+                ThisController.speed = otherCntrl.speed;
+                ThisController.isMovingFast = true;
+            }
         }
+            
     }
 }

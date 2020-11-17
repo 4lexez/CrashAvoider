@@ -28,21 +28,14 @@ public class GameController : MonoBehaviour {
     private float rotateCarTo;
     private bool IsFromUp;
     public static Action ActionDead;
-    private int LastRandom;
+
+
 
     private void Start() {
         timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;
         if (environment != null)
             environment.transform.GetChild(PlayerPrefs.GetInt("NowMap") - 1).gameObject.SetActive(true);
-        if (!IsAdd && PlayerPrefs.GetString("NoAds") != "yes")
-
-        {
-            Instantiate(AdManager, Vector3.zero, Quaternion.identity);
-            IsAdd = true;
-            
-        }
-        
         CarController.isLose = false;
         CarController.countCars = 0;
         
@@ -103,6 +96,10 @@ public class GameController : MonoBehaviour {
     void SpawnCar(Vector3 pos, float rotateCarTo, bool isMoveFromUp = false)
     {
         GameObject newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)) as GameObject;
+        //var example = new Example();
+        //example.CreateFromPoolAction();
+
+
         newObj.name = $"Car - {++countCars}";
 
         int random = isMainScene ? 1 : Random.Range(1, 4);
