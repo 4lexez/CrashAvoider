@@ -36,7 +36,7 @@ public class BuyNewTime : MonoBehaviour
             {
                 case 50:
                     TimeCount++;
-                    PlayerPrefs.SetInt("Time", TimeCount);
+                    PlayerPrefs.SetInt("Time", TimeCount + PlayerPrefs.GetInt("Time"));
                     timeCount.text = PlayerPrefs.GetInt("Time", TimeCount).ToString();
                     break;
             }

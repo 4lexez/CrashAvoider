@@ -1,0 +1,36 @@
+Version 2
+- Updated outdated APIs to be compatible with Unity 5+, 2017+
+- Slight modifications on UI.
+Version 1.8.2
+- Small performance improvements
+- Small bug fixes
+Version 1.8.1
+- Added namespaces to build to avoid conflicts
+Version 1.8
+- Generates mesh assets now to not lose references.
+Version 1.7.7
+- Fixed bug with multiple material objects and lightmapping (UV2 channel) and
+added some small performance improvements
+Version 1.7.6
+- Fixed small bug that didnt let you bake a single object with multiple materiasl.
+Version 1.7.5
+- Small performance improvements and adaptations to work on Unity5
+Version 1.7.1
+- Solved problem where multiple material objects where not correctly atlassed when the texture format was different from the native ones. ie. iPhone/android builds
+Version 1.7
+- Supports any kind of texture format
+Version 1.65
+- Solved crash when object has more than 1 material, has different shaders and the shaders are not recognized
+Version 1.64
+- Fixed bug when game object had several materials and one of the materials
+was different.
+Version 1.63
+- Fixed small bug that made the app crash when baking atlas on a non saved scene.
+Version 1.6
+- Added support for tiled textures.
+Version 1.5
+- Added support for multiple materials per game object.
+- Fixed indexor that was conflicting with miltiple material atlasses.
+Version 1.02
+changed name of package.
+Version 1.0

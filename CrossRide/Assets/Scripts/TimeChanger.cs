@@ -44,6 +44,7 @@ public class TimeChanger : MonoBehaviour
         if (TimeBtn.activeSelf)
         {
             TimeBtn.SetActive(false);
+            PlayerPrefs.SetInt("Time", howMuchItCanBeUsed);
             StopCoroutine(TimeFrozing());
             changeTime(1);
         }

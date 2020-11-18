@@ -1,3 +1,19 @@
+## [2.2.1] - 2020-11-13
+
+### Fixed
+- GooglePlay - ProductMetadata.localizedPrice always `0` 
+- GooglePlay - "Main" thread warning seen in IStoreListener.OnInitialized and related callbacks.
+
+### Added
+- GooglePlay - Subscription metadata is now available in `GoogleProductMetadata` from `ProductMetadata.GetGoogleProductMetadata()` via `IStoreController.products`.
+   - For example, use `GoogleProductMetadata googleMetadata = storeController.product.all[0].metadata.GetGoogleProductMetadata();` now instead of the deprecated, `IGooglePlayStoreExtensions.GetProductJSONDictionary`.
+   - string originalJson - Note, a single SkuDetails JSON, instead of multiple from `GetProductJSONDictionary` 
+   - string subscriptionPeriod
+   - string freeTrialPeriod
+   - string introductoryPrice
+   - string introductoryPricePeriod
+   - int introductoryPriceCycles
+
 ## [2.2.0] - 2020-11-06
 
 ### Changed
