@@ -95,33 +95,28 @@ public class GameController : MonoBehaviour {
     }
     void SpawnCar(Vector3 pos, float rotateCarTo, bool isMoveFromUp = false)
     {
-        GameObject newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)) as GameObject;
-        //var example = new Example();
-        //example.CreateFromPoolAction();
-
-
+        CarController newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)).GetComponent<CarController>();
         newObj.name = $"Car - {++countCars}";
 
         int random = isMainScene ? 1 : Random.Range(1, 4);
         if (isMainScene)
-            newObj.GetComponent<CarController>().speed = 10f;
+            newObj.speed = 10f;
 
         switch (random)
         {
             case 1:
                 // Move right
-                newObj.GetComponent<CarController>().rightTurn = true;
+                newObj.rightTurn = true;
                 break;
             case 3:
                 // Move left
-                newObj.GetComponent<CarController>().leftTurn = true;
+                newObj.leftTurn = true;
                 if (isMoveFromUp)
-                    newObj.GetComponent<CarController>().moveFromUp = true;
+                    newObj.moveFromUp = true;
                 break;
             case 5:
                 // Move forward
                 break;
-
         }
     }
 }
