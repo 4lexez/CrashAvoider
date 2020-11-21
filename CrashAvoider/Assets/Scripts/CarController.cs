@@ -12,7 +12,6 @@ public class CarController : MonoBehaviour {
     public float speed = 15f, force = 50f;
     [SerializeField] private Rigidbody carRb;
     [SerializeField] private float originRotationY, rotateMultRight = 6f, rotateMultLeft = 4.5f;
-    [SerializeField] private Camera mainCam;
     [SerializeField] private LayerMask carsLayer;
     public bool isMovingFast, carCrashed, nearCrash;
     [NonSerialized] public bool carPassed;
@@ -22,7 +21,6 @@ public class CarController : MonoBehaviour {
 
     private void Start() {
 
-        mainCam = Camera.main;
         originRotationY = transform.eulerAngles.y;
         carRb = GetComponent<Rigidbody>(); 
 
@@ -46,7 +44,7 @@ public class CarController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        carRb.MovePosition(transform.position - transform.forward * speed * Time.fixedDeltaTime);
+        carRb.MovePosition(transform.position + transform.right * speed * Time.fixedDeltaTime);
     }
     private void OnMouseDown()
     {
@@ -84,7 +82,7 @@ public class CarController : MonoBehaviour {
             if (isMovingFast)
                 force *= 1.2f;
             
-            carRb.AddRelativeForce(Vector3.back * force);
+            carRb.AddRelativeForce(Vector3.left * force);
             if (PlayerPrefs.GetString("music") != "No") {
                 GetComponent<AudioSource>().clip = crash;
                 GetComponent<AudioSource>().Play();

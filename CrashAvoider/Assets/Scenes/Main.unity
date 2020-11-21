@@ -152,9 +152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainScene: 1
   cars:
-  - {fileID: 100008, guid: ca6a542169d8e474aa2c2cb47423839a, type: 3}
-  - {fileID: 100008, guid: 1989787f5d4f08647a723f7cb7df5f05, type: 3}
-  - {fileID: 504355176687900411, guid: d2dd8305ed830614096dd7b427e0acf0, type: 3}
+  - {fileID: 4117513173484512634, guid: 0ce2f0e6e883cb446acf900ae510aa88, type: 3}
+  - {fileID: 1208348819812877110, guid: b2d0923fd96638747a280f991d13e59a, type: 3}
+  - {fileID: 8465200940332372879, guid: f69bb21ac0f003642aeff2131a97258d, type: 3}
+  - {fileID: 377267426941673751, guid: 9907fdac5c993c14699c3e531638bf33, type: 3}
+  - {fileID: 1851183032459966635, guid: ffbc2b17eeb43e0438010a89a6134e26, type: 3}
+  - {fileID: 3455529753399012478, guid: 2d94c40678528b848ad819a52d14f397, type: 3}
   canvasLosePanel: {fileID: 497470555}
   timeToSpawnFrom: 1
   timeToSpawnTo: 3
@@ -163,8 +166,6 @@ MonoBehaviour:
   nowScore: {fileID: 0}
   topScore: {fileID: 0}
   coinsCount: {fileID: 0}
-  AdManager: {fileID: 1859086356553953067, guid: 121f6c86769ab4a9e86c11a07f8dbc1d,
-    type: 3}
   environment: {fileID: 0}
 --- !u!4 &21258891
 Transform:
@@ -2399,10 +2400,60 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3900697828437618152, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901378318403436506, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901398779584443510, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901442390011333756, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901447447645951502, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901500391802145044, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901558214196187682, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902097119209413908, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3902154731823942328, guid: cac0d0ca7d52dc14a9fcd194595f0097,
         type: 3}
       propertyPath: m_Name
       value: Roads
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902303385155346396, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902338072789491040, guid: cac0d0ca7d52dc14a9fcd194595f0097,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3904878336970524902, guid: cac0d0ca7d52dc14a9fcd194595f0097,
         type: 3}

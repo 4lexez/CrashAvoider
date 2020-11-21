@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] private Coroutine bottomCars, leftCars, rightCars, upCars;
     [SerializeField] private bool isLoseOnce;
     [SerializeField] private Text nowScore, topScore, coinsCount;
-    [SerializeField] private GameObject AdManager;
+    //[SerializeField] private GameObject AdManager;
     private TimeChanger timeChanger;
     public static bool IsAdd;
     public static bool IsStartTimeAdded;
@@ -74,16 +74,16 @@ public class GameController : MonoBehaviour {
             switch (random)
             {
                 case 0:
-                    rotateCarTo = 180f;
-                    break;
-                case 1:
                     rotateCarTo = 270f;
                     break;
+                case 1:
+                    rotateCarTo = 0f;
+                    break;
                 case 2:
-                    rotateCarTo = 90f;
+                    rotateCarTo = 180f;
                     break;
                 case 3:
-                    rotateCarTo = 0f;
+                    rotateCarTo = 90f;
                     IsFromUp = true;
                     break;
             }
