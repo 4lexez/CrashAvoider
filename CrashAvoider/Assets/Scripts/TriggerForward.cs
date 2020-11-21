@@ -11,13 +11,11 @@ public class TriggerForward : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        print("Else");
         if (other.gameObject.CompareTag("Car"))
         {
             CarController otherCntrl = other.GetComponent<CarController>();
             if (otherCntrl.carCrashed || otherCntrl.nearCrash)
                 ThisController.CallCoroutine();
-            print("Collise");
         }
     }
 }
