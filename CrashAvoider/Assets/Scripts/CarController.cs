@@ -81,14 +81,18 @@ public class CarController : MonoBehaviour {
             
             if (isMovingFast)
                 force *= 1.2f;
-            
-            carRb.AddRelativeForce(Vector3.left * force);
+
+            /*Vector3 dir = other.contacts[0].point - transform.position;
+            dir = dir.normalized;
+            GetComponent<Rigidbody>().AddForce(dir * force);*/
+            carRb.AddRelativeForce(Vector3.right * force);
             if (PlayerPrefs.GetString("music") != "No") {
                 GetComponent<AudioSource>().clip = crash;
                 GetComponent<AudioSource>().Play();
             }
         }
     }
+
 
     private void OnTriggerStay(Collider other) {
         if (carCrashed)

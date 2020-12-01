@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7206367605207638719}
   - component: {fileID: 631315797160697077}
   - component: {fileID: 4858832582925482697}
+  - component: {fileID: 3683520256806398578}
   m_Layer: 9
   m_Name: Ambulance
   m_TagString: Car
@@ -154,8 +155,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.26573, y: 3.613093, z: 3.2627244}
-  m_Center: {x: 0.00587368, y: 1.7926314, z: 0}
+  m_Size: {x: 7.26573, y: 3.613093, z: 3}
+  m_Center: {x: 0, y: 1.7926314, z: 0}
 --- !u!82 &631315797160697077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ MonoBehaviour:
   leftTurn: 0
   moveFromUp: 0
   speed: 12
-  force: 600
+  force: 500
   carRb: {fileID: 0}
   originRotationY: 0
   rotateMultRight: 6
@@ -289,6 +290,18 @@ MonoBehaviour:
   turnRightSignal: {fileID: 1868882703035428251}
   explosion: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
   exhaust: {fileID: 1998766811820298, guid: 6df1b0079f73347d6bf4b9735c8a527c, type: 3}
+--- !u!114 &3683520256806398578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851183032459966635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61a27130bd2371429a387a656c638f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1868882703035428251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,7 +5835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8888544617784567887}
   - component: {fileID: 2520659490913212004}
-  - component: {fileID: 7966007551067578961}
+  - component: {fileID: 3038614436613349085}
   m_Layer: 11
   m_Name: TriggerBack
   m_TagString: CarTrigger
@@ -5857,7 +5870,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 0.3, z: 5}
   m_Center: {x: 0, y: 3, z: 0}
---- !u!114 &7966007551067578961
+--- !u!114 &3038614436613349085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5991,7 +6004,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.3, z: 10}
+  m_Size: {x: 8, y: 0.3000002, z: 10.983889}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &6424736261649809310
 MonoBehaviour:

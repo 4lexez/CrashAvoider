@@ -17,8 +17,8 @@ public class TriggerBack : MonoBehaviour
             && !ThisController.carCrashed
             && !otherCntrl.nearCrash)
             {
-                ThisController.speed = otherCntrl.speed;
-                ThisController.isMovingFast = true;
+                otherCntrl.speed = ThisController.speed;
+                otherCntrl.isMovingFast = true;
             }
         }
             
