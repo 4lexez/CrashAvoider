@@ -49,13 +49,8 @@ public class CarController : MonoBehaviour {
     private void OnMouseDown()
     {
         string carName = transform.gameObject.name;
-
-#if UNITY_EDITOR
         if (!isMovingFast)
         {
-#else
-            if (Input.GetTouch(0).phase == TouchPhase.Began && !isMovingFast && gameObject.name == carName) {
-#endif
             GameObject vfx = Instantiate(exhaust, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.Euler(90, 0, 0)) as GameObject;
             Destroy(vfx, 2f);
             speed *= 2f;
@@ -79,20 +74,16 @@ public class CarController : MonoBehaviour {
             GameObject vfx = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             Destroy(vfx, 5f);
             
-            if (isMovingFast)
-                force *= 1.2f;
-
-            /*Vector3 dir = other.contacts[0].point - transform.position;
-            dir = dir.normalized;
-            GetComponent<Rigidbody>().AddForce(dir * force);*/
+            if (isMovingFast) force *= 1.2f;
+            
             carRb.AddRelativeForce(Vector3.right * force);
-            if (PlayerPrefs.GetString("music") != "No") {
+            if (PlayerPrefs.GetString("music") != "No") 
+            {
                 GetComponent<AudioSource>().clip = crash;
                 GetComponent<AudioSource>().Play();
             }
         }
     }
-
 
     private void OnTriggerStay(Collider other) {
         if (carCrashed)

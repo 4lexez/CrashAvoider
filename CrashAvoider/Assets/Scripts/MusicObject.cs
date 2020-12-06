@@ -5,13 +5,18 @@ using UnityEngine;
 public class MusicObject : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] ListOfMusic;
     //[SerializeField] private AudioMixer mixer;
     private bool IsSpawned;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
-        if (PlayerPrefs.GetString("music") == "No") audioSource.mute = true;
+        audioSource.clip = ListOfMusic[Random.Range(0, ListOfMusic.Length)];
+        GetComponent<AudioSource>().Play();
+        if (PlayerPrefs.GetString("music") == "No")
+        {
+            audioSource.mute = true;
+        }
 
         int numMusicPlayers = FindObjectsOfType<MusicObject>().Length;
         if (numMusicPlayers != 1)

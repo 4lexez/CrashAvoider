@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3842438216254620966}
+  ListOfMusic:
+  - {fileID: 8300000, guid: 09b9b553cae37cf40880848abd7e39dd, type: 3}
+  - {fileID: 8300000, guid: cacab78d030a4de4497d95c704835ea8, type: 3}
+  - {fileID: 8300000, guid: 580ffd125b3790f4fbdd6c7d71badfbb, type: 3}
+  - {fileID: 8300000, guid: a1e4e1f18c67c47468d1946abb18a04d, type: 3}
 --- !u!82 &3842438216254620966
 AudioSource:
   m_ObjectHideFlags: 0
@@ -55,9 +60,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 768b5f7552d9a144a936396de5d1857d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47605060ae55c61449282714446c6baa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.76
   m_Pitch: 1
   Loop: 1
   Mute: 0

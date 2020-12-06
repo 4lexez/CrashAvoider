@@ -15,10 +15,12 @@ public class TriggerBack : MonoBehaviour
             CarController otherCntrl = other.GetComponent<CarController>();
             if (!otherCntrl.carCrashed
             && !ThisController.carCrashed
-            && !otherCntrl.nearCrash)
+            && !otherCntrl.nearCrash 
+            && !ThisController.nearCrash)
+
             {
-                otherCntrl.speed = ThisController.speed;
-                otherCntrl.isMovingFast = true;
+                ThisController.speed = otherCntrl.speed;
+                ThisController.isMovingFast = true;
             }
         }
             

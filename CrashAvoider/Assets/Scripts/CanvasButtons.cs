@@ -7,13 +7,15 @@ public class CanvasButtons : MonoBehaviour {
 
     [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;
     private Image image;
-
     void Start() {
         image = GetComponent<Image>();
-
         if (gameObject.name == "Music Button") {
             if (PlayerPrefs.GetString("music") == "No")
+            {
                 transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
+                AudioListener.volume = 0;
+            }
+
         }
     }
 

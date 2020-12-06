@@ -16,17 +16,6 @@ public class TriggerForward : MonoBehaviour
             CarController otherCntrl = other.GetComponent<CarController>();
             if (otherCntrl.carCrashed || otherCntrl.nearCrash)
                 ThisController.CallCoroutine();
-            /*if (!otherCntrl.carCrashed
-            && !ThisController.carCrashed
-            && !otherCntrl.nearCrash)
-            {
-                ThisController.speed = otherCntrl.speed;
-                ThisController.isMovingFast = true;
-            }*/
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        
     }
 }
