@@ -19,8 +19,9 @@ public class CarController : MonoBehaviour {
     [SerializeField] private GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
     [NonSerialized] public static int countCars;
 
-    private void Start() {
 
+    private void Start() 
+    {
         originRotationY = transform.eulerAngles.y;
         carRb = GetComponent<Rigidbody>(); 
 
@@ -68,15 +69,16 @@ public class CarController : MonoBehaviour {
         if (other.gameObject.CompareTag("Car") && !carCrashed) {
             carCrashed = true;
             IsDead();
-            speed = 0f;
+
             other.gameObject.GetComponent<CarController>().speed = 0f;
 
             GameObject vfx = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             Destroy(vfx, 5f);
             
             if (isMovingFast) force *= 1.2f;
-            
-            carRb.AddRelativeForce(Vector3.right * force);
+
+            carRb.AddRelativeForce(Vector3.right * force * (speed / 10));
+            speed = 0f;
             if (PlayerPrefs.GetString("music") != "No") 
             {
                 GetComponent<AudioSource>().clip = crash;

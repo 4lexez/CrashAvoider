@@ -72,7 +72,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.2744484, y: 2.537022, z: 2.9529667}
-  m_Center: {x: 0, y: 1.254596, z: 0}
+  m_Center: {x: 0, y: 1.27, z: 0}
 --- !u!82 &1463117710500398409
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5845,7 +5845,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.3, z: 10}
+  m_Size: {x: 8, y: 0.3, z: 11}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &5018650483000845858
 MonoBehaviour:

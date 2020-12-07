@@ -30,7 +30,16 @@ public class GameController : MonoBehaviour {
     public static Action ActionDead;
 
 
-
+    private void Awake()
+    {
+#if UNITY_ANDROID
+        Application.targetFrameRate = 60;
+#endif
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+        }
+    }
     private void Start() {
         timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;

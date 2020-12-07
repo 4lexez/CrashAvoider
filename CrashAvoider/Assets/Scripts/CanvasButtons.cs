@@ -75,9 +75,14 @@ public class CanvasButtons : MonoBehaviour {
         SceneManager.LoadScene(name);
     }
 
-    private void PlayButtonSound() {
+    private void PlayButtonSound()
+    {
         if (PlayerPrefs.GetString("music") != "No")
             GetComponent<AudioSource>().Play();
+    }
+    public void OnExitButton()
+    {
+        Application.Quit();
     }
 
 }
