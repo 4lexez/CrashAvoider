@@ -639,7 +639,7 @@ MonoBehaviour:
   leftTurn: 0
   moveFromUp: 0
   speed: 10
-  force: 500
+  force: 300
   carRb: {fileID: 0}
   originRotationY: 0
   rotateMultRight: 6

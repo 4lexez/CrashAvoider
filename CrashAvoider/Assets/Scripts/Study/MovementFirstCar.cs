@@ -24,8 +24,7 @@ public class MovementFirstCar : MonoBehaviour {
     private void OnMouseDown() {
         if (!isFirst || transform.position.x > 9f) return;
 
-        _controller.speed = 15f;
-        PlayerPrefs.SetInt("Time", 3);
+        _controller.speed = 28f;
         canvasFirst.SetActive(false);
         secondCanvas.SetActive(true);
         secondCar.GetComponent<CarController>().speed = 12f;

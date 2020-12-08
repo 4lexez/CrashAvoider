@@ -49,8 +49,8 @@ public class GameController : MonoBehaviour {
         CarController.countCars = 0;
         
         if (isMainScene) {
-            timeToSpawnFrom = 4f;
-            timeToSpawnTo = 6f;
+            timeToSpawnFrom = 2f;
+            timeToSpawnTo = 4f;
         }
 
         StartCoroutine(Spawning());
