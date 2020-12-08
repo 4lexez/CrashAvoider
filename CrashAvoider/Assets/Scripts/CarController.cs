@@ -134,6 +134,12 @@ public class CarController : MonoBehaviour {
         if (carCrashed)
             return;
 
+
+
+
+            float rotateSpeed = speed * speedRotate * dir;
+        Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, rotateSpeed, 0) * Time.deltaTime);
+        //Pizda, eto vse proverki na ygol povorota
         if (dir == -1 && transform.localRotation.eulerAngles.y < originRotationY - 90f)
             return;
         if (dir == -1 && moveFromUp && transform.localRotation.eulerAngles.y > 250f && transform.localRotation.eulerAngles.y < 270f)
@@ -142,13 +148,9 @@ public class CarController : MonoBehaviour {
         {
             return;
         }
-
-
-            float rotateSpeed = speed * speedRotate * dir;
-        Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, rotateSpeed, 0) * Time.deltaTime);
         if (carRb.rotation * deltaRotation == Quaternion.Euler(0, originRotationY + 90f, 0))
         {
-            
+
             return;
         }
         if (carRb.rotation * deltaRotation == Quaternion.Euler(0, originRotationY - 90f, 0))
