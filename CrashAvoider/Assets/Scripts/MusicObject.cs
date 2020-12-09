@@ -8,7 +8,21 @@ public class MusicObject : MonoBehaviour
     [SerializeField] private AudioClip[] ListOfMusic;
     //[SerializeField] private AudioMixer mixer;
     private bool IsSpawned;
-    void Start()
+    public static MusicObject thisObject;
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (thisObject == null)
+        {
+            thisObject = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+        void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = ListOfMusic[Random.Range(0, ListOfMusic.Length)];
@@ -17,17 +31,6 @@ public class MusicObject : MonoBehaviour
         {
             audioSource.mute = true;
         }
-
-        int numMusicPlayers = FindObjectsOfType<MusicObject>().Length;
-        if (numMusicPlayers != 1)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
     }
     public void OnSoundButtonClick()
     {
