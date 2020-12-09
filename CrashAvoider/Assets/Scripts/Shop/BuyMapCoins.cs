@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+#pragma warning disable 0649
 public class BuyMapCoins : MonoBehaviour {
 
     [SerializeField] private AudioClip success, fail;

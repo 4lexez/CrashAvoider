@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+#pragma warning disable 0649
 public class CanvasButtons : MonoBehaviour {
 
     [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;

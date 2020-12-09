@@ -34,7 +34,8 @@ public class MaterialOptimizatorTool : EditorWindow
   private Vector2 scrollPos;
 
   [MenuItem("Window/FearlessFox/Material Optimizator")]
-  public static void AutoWardrobeSettings()
+#pragma warning disable 0618
+    public static void AutoWardrobeSettings()
   {
     EditorWindow editorWindow = GetWindow(typeof(MaterialOptimizatorTool));
 

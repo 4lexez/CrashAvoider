@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-
+#pragma warning disable 0649
 public class CheckMaps : MonoBehaviour {
 
     [SerializeField] private Image[] maps;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NewStore : MonoBehaviour
 {
-
+#pragma warning disable 0649
     [SerializeField]private Text Coins;
     [SerializeField] private bool TestCount, DeleteAllChanges;
     [SerializeField] private string count;

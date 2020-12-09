@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+#pragma warning disable 0649
 public class GameController : MonoBehaviour {
 
     [SerializeField] private bool isMainScene;

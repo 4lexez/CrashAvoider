@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+#pragma warning disable 0649
 public class MovementFirstCar : MonoBehaviour {
 
     [SerializeField] private GameObject canvasFirst, secondCar, secondCanvas;
@@ -17,7 +17,7 @@ public class MovementFirstCar : MonoBehaviour {
         if (transform.position.x < 8f && !isFirst) {
             isFirst = true;
             _controller.speed = 0;
-            canvasFirst.SetActive(true);
+            canvasFirst?.SetActive(true);
         }
     }
 
@@ -25,8 +25,8 @@ public class MovementFirstCar : MonoBehaviour {
         if (!isFirst || transform.position.x > 9f) return;
 
         _controller.speed = 28f;
-        canvasFirst.SetActive(false);
-        secondCanvas.SetActive(true);
+        canvasFirst?.SetActive(false);
+        secondCanvas?.SetActive(true);
         secondCar.GetComponent<CarController>().speed = 12f;
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+#pragma warning disable 0649
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour {
 
@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour {
     }
 
     IEnumerator TurnSignals(GameObject turnSignal) {
-        while (!carPassed) {
+        while (!carCrashed) {
             turnSignal.SetActive(!turnSignal.activeSelf);
             /*if (PlayerPrefs.GetString("music") != "No")
             {
@@ -139,6 +139,7 @@ public class CarController : MonoBehaviour {
 
             float rotateSpeed = speed * speedRotate * dir;
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, rotateSpeed, 0) * Time.deltaTime);
+        Quaternion Rotation = carRb.rotation * deltaRotation;
         //Pizda, eto vse proverki na ygol povorota
         if (dir == -1 && transform.localRotation.eulerAngles.y < originRotationY - 90f)
             return;
@@ -148,16 +149,16 @@ public class CarController : MonoBehaviour {
         {
             return;
         }
-        if (carRb.rotation * deltaRotation == Quaternion.Euler(0, originRotationY + 90f, 0))
+        /*if (Rotation == Quaternion.Euler(0, originRotationY + 90f, 0))
         {
 
             return;
         }
-        if (carRb.rotation * deltaRotation == Quaternion.Euler(0, originRotationY - 90f, 0))
+        if (Rotation == Quaternion.Euler(0, originRotationY - 90f, 0))
         {
             return;
-        }
-        carRb.MoveRotation(carRb.rotation * deltaRotation);
+        }*/
+        carRb.MoveRotation(Rotation);
 
     }
     private void IsDead() { GameController.ActionDead?.Invoke(); }

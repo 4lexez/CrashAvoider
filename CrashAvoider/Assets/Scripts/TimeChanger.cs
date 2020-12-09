@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+#pragma warning disable 0649
 public class TimeChanger : MonoBehaviour
 {
     [SerializeField] private int howMuchItCanBeUsed;
