@@ -7,7 +7,9 @@ public class CanvasButtons : MonoBehaviour {
 
     [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;
     private Image image;
+    private Camera MainCam;
     void Start() {
+        MainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         image = GetComponent<Image>();
         if (gameObject.name == "Music Button") {
             if (PlayerPrefs.GetString("music") == "No")
@@ -70,7 +72,7 @@ public class CanvasButtons : MonoBehaviour {
     }
 
     IEnumerator LoadScene(string name) {
-        float fadeTime = Camera.main.GetComponent<Fading>().Fade(1f);
+        float fadeTime = MainCam.GetComponent<Fading>().Fade(1f);
         yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(name);
     }

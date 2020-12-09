@@ -1,20 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 #pragma warning disable 0649
 public class TimeChanger : MonoBehaviour
 {
     [SerializeField] private int howMuchItCanBeUsed;
-    [SerializeField] private Sprite btn, btnDisabled;
+    [SerializeField] private Sprite btnDisabled;
     [SerializeField] private Image timeImage;
-    [SerializeField] private GameObject TimeBtn;
-    [SerializeField] private Text Counter;
-    [SerializeField] private AudioSource TimeSound;
-    //[SerializeField] private bool isLose;
+    private GameObject TimeBtnCanvas;
+    private Text Counter;
+    private AudioSource TimeSound;
     private void Start()
     {
-        if(PlayerPrefs.GetInt("Time") == 0)
+        TimeBtnCanvas = gameObject.transform.parent.gameObject;
+        Counter = gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
+        if (PlayerPrefs.GetInt("Time") == 0)
             timeImage.sprite = btnDisabled;
         changeTime(1);
         howMuchItCanBeUsed = PlayerPrefs.GetInt("Time");
@@ -41,12 +41,13 @@ public class TimeChanger : MonoBehaviour
     }
     public void WhenCarWrecked()
     {
-        if (TimeBtn.activeSelf)
+        if (TimeBtnCanvas.activeSelf)
         {
-            TimeBtn.SetActive(false);
+
             PlayerPrefs.SetInt("Time", howMuchItCanBeUsed);
             StopCoroutine(TimeFrozing());
             changeTime(1);
+            TimeBtnCanvas.SetActive(false);
         }
     }
     IEnumerator TimeFrozing()

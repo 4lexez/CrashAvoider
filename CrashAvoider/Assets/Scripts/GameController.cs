@@ -43,8 +43,10 @@ public class GameController : MonoBehaviour {
     private void Start() {
         timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;
-        if (environment != null)
+        if (environment != null && PlayerPrefs.GetInt("NowMap") - 1 >= 0)
             environment.transform.GetChild(PlayerPrefs.GetInt("NowMap") - 1).gameObject.SetActive(true);
+        else if(environment != null && PlayerPrefs.GetInt("NowMap") - 1 < 0)
+            environment.transform.GetChild(0).gameObject.SetActive(true);
         CarController.isLose = false;
         CarController.countCars = 0;
         
