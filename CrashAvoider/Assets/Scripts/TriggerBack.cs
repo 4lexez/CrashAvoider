@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class TriggerBack : MonoBehaviour
@@ -20,7 +19,6 @@ public class TriggerBack : MonoBehaviour
 
             {
                 //ThisController.speed = otherCntrl.speed;
-
                 //ThisController.CallCoroutine(Mathf.RoundToInt(otherCntrl.speed), false);
                 otherCntrl.CallCoroutine(Mathf.RoundToInt(ThisController.speed), false);
                 otherCntrl.isMovingFast = true;

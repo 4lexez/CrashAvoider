@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 375275247}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028437, g: 0.22571461, b: 0.3069235, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -56,7 +56,7 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
-    m_Resolution: 10
+    m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
     m_AO: 0
@@ -98,7 +98,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: dacd7ee8d1cec42409692b11bf2548d7,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -297,7 +298,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!108 &375275247
 Light:
@@ -587,7 +588,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
@@ -607,7 +608,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
+  m_BackGroundColor: {r: 0.42933428, g: 0.4528302, b: 0.4528302, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -867,6 +868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fps
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089997067246528672, guid: 97b8de35131cdff409d2ec116d5200e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b8de35131cdff409d2ec116d5200e6, type: 3}
@@ -1173,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114678, guid: 1eee3ffbad1ff4956ad141db40519abf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 425314, guid: 1eee3ffbad1ff4956ad141db40519abf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1236,6 +1246,10 @@ PrefabInstance:
     - target: {fileID: 19882972, guid: 1eee3ffbad1ff4956ad141db40519abf, type: 3}
       propertyPath: useRigidbodyForVelocity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882972, guid: 1eee3ffbad1ff4956ad141db40519abf, type: 3}
+      propertyPath: cullingMode
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eee3ffbad1ff4956ad141db40519abf, type: 3}
@@ -1981,6 +1995,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4203258558350766542, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4203258558909633730, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2040,6 +2059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Colliders
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203258559255962575, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb, type: 3}

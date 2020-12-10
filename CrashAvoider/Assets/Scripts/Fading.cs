@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+
 #pragma warning disable 0649
 public class Fading : MonoBehaviour
 {
