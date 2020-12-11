@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 6e5debcdbdf083946bef06352b9d7771
+timeCreated: 1467147100
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Rig
+    100002: //RootNode
+    100004: Tentacle
+    100006: Tentacle_Jnt_00
+    100008: Tentacle_Jnt_01
+    100010: Tentacle_Jnt_02
+    100012: Tentacle_Jnt_03
+    100014: Tentacle_Jnt_04
+    100016: Tentacle_Jnt_05
+    100018: Tentacle_Jnt_06
+    100020: Tentacle_Jnt_07
+    100022: Tentacle_Jnt_08
+    100024: Tentacle_Jnt_09
+    100026: Tentacle_Jnt_10
+    100028: Tentacle_Jnt_11
+    100030: Tentacle_Jnt_12
+    100032: Tentacle_Jnt_13
+    100034: Tentacle_Jnt_14
+    100036: Tentacle_Jnt_15
+    100038: Tentacle_Jnt_16
+    400000: Rig
+    400002: //RootNode
+    400004: Tentacle
+    400006: Tentacle_Jnt_00
+    400008: Tentacle_Jnt_01
+    400010: Tentacle_Jnt_02
+    400012: Tentacle_Jnt_03
+    400014: Tentacle_Jnt_04
+    400016: Tentacle_Jnt_05
+    400018: Tentacle_Jnt_06
+    400020: Tentacle_Jnt_07
+    400022: Tentacle_Jnt_08
+    400024: Tentacle_Jnt_09
+    400026: Tentacle_Jnt_10
+    400028: Tentacle_Jnt_11
+    400030: Tentacle_Jnt_12
+    400032: Tentacle_Jnt_13
+    400034: Tentacle_Jnt_14
+    400036: Tentacle_Jnt_15
+    400038: Tentacle_Jnt_16
+    4300000: Tentacle
+    7400000: Main
+    9500000: //RootNode
+    13700000: Tentacle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Main
+      takeName: Main
+      firstFrame: 2
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Rig
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11/Tentacle_Jnt_12
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11/Tentacle_Jnt_12/Tentacle_Jnt_13
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11/Tentacle_Jnt_12/Tentacle_Jnt_13/Tentacle_Jnt_14
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11/Tentacle_Jnt_12/Tentacle_Jnt_13/Tentacle_Jnt_14/Tentacle_Jnt_15
+        weight: 1
+      - path: Rig/Tentacle_Jnt_00/Tentacle_Jnt_01/Tentacle_Jnt_02/Tentacle_Jnt_03/Tentacle_Jnt_04/Tentacle_Jnt_05/Tentacle_Jnt_06/Tentacle_Jnt_07/Tentacle_Jnt_08/Tentacle_Jnt_09/Tentacle_Jnt_10/Tentacle_Jnt_11/Tentacle_Jnt_12/Tentacle_Jnt_13/Tentacle_Jnt_14/Tentacle_Jnt_15/Tentacle_Jnt_16
+        weight: 1
+      - path: Tentacle
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -33,7 +33,21 @@ public class GameController : MonoBehaviour {
     private void Awake()
     {
 #if UNITY_ANDROID
-        Application.targetFrameRate = 60;
+
+        Application.targetFrameRate = 30;
+        QualitySettings.vSyncCount = 0;
+        QualitySettings.antiAliasing = 0;
+        QualitySettings.shadowCascades = 2;
+        QualitySettings.shadowDistance = 70;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+#endif
+
+#if UNITY_STANDALONE_WIN
+         
+         Application.targetFrameRate = 60;
+         QualitySettings.vSyncCount = 1; 
+         QualitySettings.antiAliasing = 8;
 #endif
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
@@ -127,7 +141,10 @@ public class GameController : MonoBehaviour {
 
         int random = isMainScene ? 1 : Random.Range(1, 4);
         if (isMainScene)
+        {
             newObj.speed = 10f;
+        }
+
 
         switch (random)
         {

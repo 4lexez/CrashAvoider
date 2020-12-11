@@ -16,32 +16,24 @@ public class CarController : MonoBehaviour {
     public bool isMovingFast, carCrashed, nearCrash;
     [NonSerialized] public bool carPassed;
     [NonSerialized] public static bool isLose;
-    [SerializeField] private GameObject turnLeftSignal, turnRightSignal, explosion, exhaust;
+    [SerializeField] private GameObject explosion, exhaust;
     [NonSerialized] public static int countCars;
+    private Animator BlinkLight;
+    [SerializeField] private GameObject TurnLights, EngineParticle;
+
 
 
     private void Start() 
     {
+        BlinkLight = GetComponent<Animator>();
+
         originRotationY = transform.eulerAngles.y;
-        carRb = GetComponent<Rigidbody>(); 
+        carRb = GetComponent<Rigidbody>();
 
         if (rightTurn)
-            StartCoroutine(TurnSignals(turnRightSignal));
+            BlinkLight.SetBool("Right", rightTurn);
         else if (leftTurn)
-            StartCoroutine(TurnSignals(turnLeftSignal));
-    }
-
-    IEnumerator TurnSignals(GameObject turnSignal) {
-        while (!carCrashed) {
-            turnSignal.SetActive(!turnSignal.activeSelf);
-            /*if (PlayerPrefs.GetString("music") != "No")
-            {
-                GetComponent<AudioSource>().clip = TurnSignal;
-                GetComponent<AudioSource>().Play();
-            }*/
-            yield return new WaitForSeconds(0.5f);
-        }
-        turnSignal.SetActive(false);
+            BlinkLight.SetBool("Left", leftTurn);
     }
 
     private void FixedUpdate() {
@@ -70,13 +62,12 @@ public class CarController : MonoBehaviour {
             carCrashed = true;
             IsDead();
 
-            //other.gameObject.GetComponent<CarController>().speed = 0f;
-
             GameObject vfx = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             Destroy(vfx, 5f);
             
             if (isMovingFast) force *= 1.2f;
-
+            TurnLights.SetActive(false);
+            EngineParticle.SetActive(false);
             carRb.AddRelativeForce(Vector3.right * force * (speed * 0.1f));
             speed = 0f;
             if (PlayerPrefs.GetString("music") != "No") 
@@ -116,13 +107,13 @@ public class CarController : MonoBehaviour {
         if (other.transform.CompareTag("TurnBlock Right") && rightTurn)
         {
             carRb.rotation = Quaternion.Euler(0, originRotationY + 90f, 0);
-            StopCoroutine(TurnSignals(turnRightSignal));
+            BlinkLight.SetBool("Right", false);
         }
 
         else if (other.transform.CompareTag("TurnBlock Left") && leftTurn)
         {
             carRb.rotation = Quaternion.Euler(0, originRotationY - 90f, 0);
-            StopCoroutine(TurnSignals(turnLeftSignal));
+            BlinkLight.SetBool("Left", false);
         }
 
         else if (other.transform.CompareTag("Delete Trigger"))
