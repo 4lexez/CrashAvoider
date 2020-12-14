@@ -97,8 +97,11 @@ public class GameController : MonoBehaviour {
 
         topScore.text = "<color=#F65757>Top:</color> " + PlayerPrefs.GetInt("Score").ToString();
 
-        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
-        coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
+        //PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
+        CountCoins.Coin = CountCoins.Coin + CarController.countCars;
+        CountCoins.Save();
+        //coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
+        coinsCount.text = CountCoins.Coin.ToString();
 
         canvasLosePanel.SetActive(true);
         isLoseOnce = true;
