@@ -801,7 +801,6 @@ GameObject:
   - component: {fileID: 6871473968007057850}
   - component: {fileID: 1508856542703744902}
   - component: {fileID: 1137346498331604417}
-  - component: {fileID: 7529545285901040781}
   m_Layer: 9
   m_Name: LuxurySuv
   m_TagString: Car
@@ -982,7 +981,7 @@ MonoBehaviour:
   force: 600
   carRb: {fileID: 0}
   originRotationY: 0
-  rotateMultRight: 6
+  rotateMultRight: 6.1
   rotateMultLeft: 4.4
   carsLayer:
     serializedVersion: 2
@@ -1013,20 +1012,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7529545285901040781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5633504356280907236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088ccb440c4d31845894e83e14580bb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesh: {fileID: 0}
-  isNotActive: 0
 --- !u!1 &7410590789996985206
 GameObject:
   m_ObjectHideFlags: 0

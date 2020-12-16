@@ -677,7 +677,7 @@ Camera:
     height: 0.97928435
   near clip plane: 0.3
   far clip plane: 100
-  field of view: 60
+  field of view: 57
   orthographic: 0
   orthographic size: 4.0625
   m_Depth: -1
@@ -10084,11 +10084,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4203258558350766542, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4203258558909633730, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10148,11 +10143,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Colliders
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203258559255962575, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c95b0fe6eaad9c4eb93cc0646a776eb, type: 3}

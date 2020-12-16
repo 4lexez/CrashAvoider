@@ -5992,7 +5992,7 @@ MonoBehaviour:
   force: 300
   carRb: {fileID: 0}
   originRotationY: 0
-  rotateMultRight: 6
+  rotateMultRight: 6.05
   rotateMultLeft: 4.4
   carsLayer:
     serializedVersion: 2
