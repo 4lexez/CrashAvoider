@@ -1343,7 +1343,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8ed964961e5df4885b93a28f66a38e5a, type: 3}
+    m_Font: {fileID: 12800000, guid: 4f9492ac73109344f9f0b6e853eaaeb0, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659344376}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -2179,7 +2179,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8ed964961e5df4885b93a28f66a38e5a, type: 3}
+    m_Font: {fileID: 12800000, guid: d94bab215a888224284553e8fc80e8f6, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
@@ -2554,7 +2554,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8ed964961e5df4885b93a28f66a38e5a, type: 3}
+    m_Font: {fileID: 12800000, guid: 4f9492ac73109344f9f0b6e853eaaeb0, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -3820,7 +3820,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8ed964961e5df4885b93a28f66a38e5a, type: 3}
+    m_Font: {fileID: 12800000, guid: 4f9492ac73109344f9f0b6e853eaaeb0, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
@@ -4023,7 +4023,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244999845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -4051,7 +4051,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 8ed964961e5df4885b93a28f66a38e5a, type: 3}
+    m_Font: {fileID: 12800000, guid: d94bab215a888224284553e8fc80e8f6, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1

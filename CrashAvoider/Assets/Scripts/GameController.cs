@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class GameController : MonoBehaviour {
 
     [SerializeField] private bool isMainScene;
-    [SerializeField] private GameObject[] cars;
+    [SerializeField] private CarController[] cars;
     [SerializeField] private GameObject canvasLosePanel;
     [SerializeField] private float timeToSpawnFrom = 2f, timeToSpawnTo = 4.5f;
     [SerializeField] private int countCars;
@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour {
     private float rotateCarTo;
     private bool IsFromUp;
     public static Action ActionDead;
+
 
 
     private void Awake()
@@ -82,7 +83,7 @@ public class GameController : MonoBehaviour {
         
         if (isMainScene) {
             timeToSpawnFrom = 2f;
-            timeToSpawnTo = 4f;
+            timeToSpawnTo = 3f;
         }
 
         StartCoroutine(Spawning());
@@ -131,16 +132,19 @@ public class GameController : MonoBehaviour {
                     IsFromUp = true;
                     break;
             }
-            SpawnCar(vectors[random], rotateCarTo, IsFromUp);
+
             float timeToSpawn = Random.Range(timeToSpawnFrom, timeToSpawnTo);
-            random++;
+
             yield return new WaitForSeconds(timeToSpawn);
+            SpawnCar(vectors[random], rotateCarTo, IsFromUp);
+            random++;
         }
     }
     void SpawnCar(Vector3 pos, float rotateCarTo, bool isMoveFromUp = false)
     {
-        CarController newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)).GetComponent<CarController>();
-        newObj.name = $"Car - {++countCars}";
+        //var newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)).GetComponent<CarController>();
+        var newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0));
+        //newObj.name = $"Car - {++countCars}";
 
         int random = isMainScene ? 1 : Random.Range(1, 4);
         if (isMainScene)

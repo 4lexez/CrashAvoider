@@ -23,6 +23,7 @@ public class CarController : MonoBehaviour {
 
 
 
+
     private void Start() 
     {
         BlinkLight = GetComponent<Animator>();
@@ -58,23 +59,29 @@ public class CarController : MonoBehaviour {
 
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Car") && !carCrashed) {
+        if (other.gameObject.CompareTag("Car") && !carCrashed)
+        {
             carCrashed = true;
             IsDead();
 
             GameObject vfx = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             Destroy(vfx, 5f);
-            
+
             if (isMovingFast) force *= 1.2f;
             TurnLights.SetActive(false);
             EngineParticle.SetActive(false);
             carRb.AddRelativeForce(Vector3.right * force * (speed * 0.1f));
             speed = 0f;
-            if (PlayerPrefs.GetString("music") != "No") 
+            StartCoroutine(BecameStatic(15));
+            if (PlayerPrefs.GetString("music") != "No")
             {
                 GetComponent<AudioSource>().clip = crash;
                 GetComponent<AudioSource>().Play();
             }
+        }
+        if (other.gameObject.CompareTag("Delete"))
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -168,5 +175,11 @@ public class CarController : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         nearCrash = IsCrash;
+        StartCoroutine(BecameStatic(10));
+    }
+    private IEnumerator BecameStatic(int time)
+    {
+        yield return new WaitForSeconds(time);
+        gameObject.isStatic = true;
     }
 }

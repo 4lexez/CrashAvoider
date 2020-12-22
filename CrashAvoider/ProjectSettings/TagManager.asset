@@ -11,6 +11,7 @@ TagManager:
   - TurnBlock Left
   - Cube
   - CarTrigger
+  - Delete
   layers:
   - Default
   - TransparentFX

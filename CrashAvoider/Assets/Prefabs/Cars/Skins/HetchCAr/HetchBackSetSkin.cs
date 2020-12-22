@@ -12,7 +12,7 @@ public class HetchBackSetSkin : MonoBehaviour
         {
             SkinManager skinManager = GameObject.Find("SkinManager").GetComponent<SkinManager>();
             SetSkins(skinManager.skins[skinNumber]);
-            Debug.Log(skinNumber);
+
         }
     }
 

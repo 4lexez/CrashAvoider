@@ -4,7 +4,7 @@ public class SkinManager : MonoBehaviour
 {
     public Skin[] skins;
 
-    private void OnGUI()
+    /*private void OnGUI()
     {
         if (GUI.Button(new Rect(10, 10, 150, 100), "Clear All Prefs"))
         {
@@ -15,5 +15,5 @@ public class SkinManager : MonoBehaviour
             CountCoins.Coin = 1200;
             CountCoins.Save();
         }
-    }
+    }*/
 }
