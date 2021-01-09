@@ -5,19 +5,13 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 #pragma warning disable 0649
 public class GameController : MonoBehaviour {
-
-    [SerializeField] private bool isMainScene;
-    [SerializeField] private CarController[] cars;
-    [SerializeField] private GameObject canvasLosePanel;
-    [SerializeField] private float timeToSpawnFrom = 2f, timeToSpawnTo = 4.5f;
-    [SerializeField] private int countCars;
-    [SerializeField] private Coroutine bottomCars, leftCars, rightCars, upCars;
-    [SerializeField] private bool isLoseOnce;
-    [SerializeField] private Text nowScore, topScore, coinsCount;
-    //[SerializeField] private GameObject AdManager;
-    private TimeChanger timeChanger;
-    public static bool IsAdd;
-    public static bool IsStartTimeAdded;
+    #region Canvases
+    [SerializeField] private Canvas canvasLosePanel, canvasButtonPanel;
+    #endregion
+    #region Actions
+    public static Action ActionDead;
+    #endregion
+    #region Vectors
     [SerializeField] private GameObject environment;
     private Vector3[] vectors = new Vector3[] {
         new Vector3(-1.06f, -0.15f, -22.7f),
@@ -25,17 +19,37 @@ public class GameController : MonoBehaviour {
         new Vector3(26.4f, -0.15f, 9.86f),
         new Vector3(-8.11f, -0.15f, 58f)
         };
-    private float rotateCarTo;
+    #endregion
+    #region Bools
     private bool IsFromUp;
-    public static Action ActionDead;
-
-
+    [SerializeField] private bool isLoseOnce;
+    public static bool IsAdd;
+    [SerializeField] private bool isMainScene;
+    public static bool IsStartTimeAdded;
+    #endregion
+    #region FloatsAndInts
+    [SerializeField] private float timeToSpawnFrom = 2f, timeToSpawnTo = 4.5f;
+    private float rotateCarTo;
+    [SerializeField] private int countCars;
+    [SerializeField] private int decide;
+    #endregion
+    #region Scripts
+    private TimeChanger timeChanger;
+    [SerializeField] private CarController[] cars;
+    #endregion
+    #region Texts
+    [SerializeField] private Text nowScore, topScore, coinsCount;
+    #endregion
+    #region Coroutines
+    [SerializeField] private Coroutine bottomCars, leftCars, rightCars, upCars;
+    #endregion
 
     private void Awake()
     {
+        Application.targetFrameRate = -1;
 #if UNITY_ANDROID
+        //Screen.SetResolution(1920, 1080, true);
 
-        Application.targetFrameRate = 30;
         QualitySettings.vSyncCount = 0;
         QualitySettings.antiAliasing = 0;
         QualitySettings.shadowCascades = 2;
@@ -46,7 +60,7 @@ public class GameController : MonoBehaviour {
 
 #if UNITY_STANDALONE_WIN
          
-         Application.targetFrameRate = 60;
+         Application.targetFrameRate = -1;
          QualitySettings.vSyncCount = 1; 
          QualitySettings.antiAliasing = 8;
 #endif
@@ -56,6 +70,7 @@ public class GameController : MonoBehaviour {
         }
     }
     private void Start() {
+
         timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;
         int EnCount = PlayerPrefs.GetInt("NowMap") - 1;
@@ -73,11 +88,6 @@ public class GameController : MonoBehaviour {
 
         }
      }
-
-
-            //environment.transform.GetChild(PlayerPrefs.GetInt("NowMap") - 1).gameObject.SetActive(true);
-        
-            //environment.transform.GetChild(0).gameObject.SetActive(true);
         CarController.isLose = false;
         CarController.countCars = 0;
         
@@ -97,14 +107,11 @@ public class GameController : MonoBehaviour {
             PlayerPrefs.SetInt("Score", CarController.countCars);
 
         topScore.text = "<color=#F65757>Top:</color> " + PlayerPrefs.GetInt("Score").ToString();
-
-        //PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
         CountCoins.Coin = CountCoins.Coin + CarController.countCars;
         CountCoins.Save();
-        //coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
         coinsCount.text = CountCoins.Coin.ToString();
-
-        canvasLosePanel.SetActive(true);
+        canvasLosePanel.enabled = true;
+        canvasButtonPanel.enabled = true;
         isLoseOnce = true;
     }
     IEnumerator Spawning()
@@ -142,17 +149,15 @@ public class GameController : MonoBehaviour {
     }
     void SpawnCar(Vector3 pos, float rotateCarTo, bool isMoveFromUp = false)
     {
-        //var newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0)).GetComponent<CarController>();
         var newObj = Instantiate(cars[Random.Range(0, cars.Length)], pos, Quaternion.Euler(0, rotateCarTo, 0));
-        //newObj.name = $"Car - {++countCars}";
+        //var newObj = Instantiate(cars[decide], pos, Quaternion.Euler(0, rotateCarTo, 0));
+
 
         int random = isMainScene ? 1 : Random.Range(1, 4);
         if (isMainScene)
         {
             newObj.speed = 10f;
         }
-
-
         switch (random)
         {
             case 1:

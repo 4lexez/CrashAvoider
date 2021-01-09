@@ -3,17 +3,17 @@
 public class SkinManager : MonoBehaviour
 {
     public Skin[] skins;
+    public Skin[] skinsDelivery;
+    public Skin[] skinsLuxury;
+    public Skin[] skinsSedan;
 
-    /*private void OnGUI()
+    public void DeletePrefs()
     {
-        if (GUI.Button(new Rect(10, 10, 150, 100), "Clear All Prefs"))
-        {
-            PlayerPrefs.DeleteAll();
-        }
-        if (GUI.Button(new Rect(30, 110, 80, 80), "Plus Coin"))
-        {
-            CountCoins.Coin = 1200;
-            CountCoins.Save();
-        }
-    }*/
+        PlayerPrefs.DeleteAll();
+    }
+    public void PlusCoins()
+    {
+        CountCoins.Coin = 1200;
+        CountCoins.Save();
+    }
 }

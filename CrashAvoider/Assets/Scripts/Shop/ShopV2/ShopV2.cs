@@ -8,13 +8,15 @@ public class ShopV2 : MonoBehaviour
     {
         HideOtherPanel(num);
         panel[num].gameObject.SetActive(true);
+        //panel[num].enabled = true;
     }
  
     private void HideOtherPanel(int num)
     {
        foreach(Canvas canvas in panel)
         {
-           if(panel[num]!=canvas) canvas.gameObject.SetActive(false);
+            if(panel[num]!=canvas) canvas.gameObject.SetActive(false);
+            //if (panel[num] != canvas) canvas.enabled = false;
         }
     }
 }

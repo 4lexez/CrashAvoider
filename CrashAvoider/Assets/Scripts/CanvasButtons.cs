@@ -8,28 +8,34 @@ public class CanvasButtons : MonoBehaviour {
     [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;
     private Image image;
     private Camera MainCam;
+    [SerializeField] private MixerController AudioController;
+    //public Gui guiScript;
+
     void Start() {
+        AudioController = GetComponent<MixerController>();
         MainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         image = GetComponent<Image>();
         if (gameObject.name == "Music Button") {
             if (PlayerPrefs.GetString("music") == "No")
             {
                 transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
-                AudioListener.volume = 0;
+                AudioController.SetVolume(-80);
             }
 
         }
     }
 
     public void MusicButton() {
-        if (PlayerPrefs.GetString("music") == "No")
+        if (AudioController.VolumeValue == -80)
         { // Turn on
             PlayerPrefs.SetString("music", "Yes");
+            AudioController.SetVolume(0);
             transform.GetChild(0).GetComponent<Image>().sprite = musicOn;
         }
-        else
+        else if(AudioController.VolumeValue == 0)
         { // Turn off
             PlayerPrefs.SetString("music", "No");
+            AudioController.SetVolume(-80);
             transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
         }
 
@@ -71,8 +77,10 @@ public class CanvasButtons : MonoBehaviour {
             transform.GetChild(0).localPosition += new Vector3(0, 5f, 0);
     }
 
-    IEnumerator LoadScene(string name) {
+    IEnumerator LoadScene(string name)
+    {
         float fadeTime = MainCam.GetComponent<Fading>().Fade(1f);
+        //float fadeTime = fading.Fade(1f);
         yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(name);
     }

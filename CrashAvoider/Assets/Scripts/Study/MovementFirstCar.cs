@@ -3,21 +3,20 @@ using UnityEngine;
 #pragma warning disable 0649
 public class MovementFirstCar : MonoBehaviour {
 
-    [SerializeField] private GameObject canvasFirst, secondCar, secondCanvas;
+    [SerializeField] private GameObject  secondCar;
+    [SerializeField] private Canvas canvasFirst, secondCanvas;
     private bool isFirst;
     private CarController _controller;
 
-
     private void Start() {
         _controller = GetComponent<CarController>();
-
     }
 
     private void Update() {
         if (transform.position.x < 8f && !isFirst) {
             isFirst = true;
             _controller.speed = 0;
-            canvasFirst?.SetActive(true);
+            canvasFirst.enabled = true;
         }
     }
 
@@ -25,8 +24,8 @@ public class MovementFirstCar : MonoBehaviour {
         if (!isFirst || transform.position.x > 9f) return;
 
         _controller.speed = 28f;
-        canvasFirst?.SetActive(false);
-        secondCanvas?.SetActive(true);
+        canvasFirst.enabled = false;
+        secondCanvas.enabled = true;
         secondCar.GetComponent<CarController>().speed = 12f;
     }
 }

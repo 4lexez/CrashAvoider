@@ -9,7 +9,7 @@ public class BuyItemMoney : MonoBehaviour {
 
     public Types type;
 
-    public void BuyItem() {
+    /*public void BuyItem() {
         switch (type) {
             case Types.REMOVE_ADS:
                 IAPManager.instance.BuyNoAds();
@@ -21,6 +21,6 @@ public class BuyItemMoney : MonoBehaviour {
                 IAPManager.instance.BuyMegapolisMap();
                 break;
         }
-    }
+    }*/
 
 }

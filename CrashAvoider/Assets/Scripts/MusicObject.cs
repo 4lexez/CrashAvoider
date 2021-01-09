@@ -26,16 +26,8 @@ public class MusicObject : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = ListOfMusic[Random.Range(0, ListOfMusic.Length)];
         GetComponent<AudioSource>().Play();
-        if (PlayerPrefs.GetString("music") == "No")
-        {
-            audioSource.mute = true;
-        }
     }
-    public void OnSoundButtonClick()
-    {
-     audioSource.mute = !audioSource.mute;
-        
-    }
+
 }
 
 
