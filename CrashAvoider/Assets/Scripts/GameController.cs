@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour {
     {
         Application.targetFrameRate = -1;
 #if UNITY_ANDROID
-        //Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(1920, 1080, true);
 
         QualitySettings.vSyncCount = 0;
         QualitySettings.antiAliasing = 0;
@@ -70,11 +70,10 @@ public class GameController : MonoBehaviour {
         }
     }
     private void Start() {
-
         timeChanger = GameObject.Find("TimeChanging")?.GetComponent<TimeChanger>();
         ActionDead = Dead;
         int EnCount = PlayerPrefs.GetInt("NowMap") - 1;
-        if (environment != null)
+        /*if (environment != null)
         {
             for (int i = environment.transform.childCount -1; i > 0; i--)
             {
@@ -85,9 +84,8 @@ public class GameController : MonoBehaviour {
                     if (i != 0)
                         environment.transform.GetChild(i).gameObject.SetActive(false);
                 }
-
-        }
-     }
+            }
+        }*/
         CarController.isLose = false;
         CarController.countCars = 0;
         

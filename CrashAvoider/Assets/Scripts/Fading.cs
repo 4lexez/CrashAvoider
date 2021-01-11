@@ -5,7 +5,7 @@ public class Fading : MonoBehaviour
 {
 
     [SerializeField] private Texture2D fading;
-    private float fadeSpeed = 0.8f, alpha = 1f, fadeDir = -1;
+    public float fadeSpeed = 0.8f, alpha = 1f, fadeDir = -1;
     private int drawDepth = -1000;
 
     void OnGUI()

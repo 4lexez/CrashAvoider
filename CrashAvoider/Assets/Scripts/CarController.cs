@@ -180,7 +180,7 @@ public class CarController : MonoBehaviour {
     {
         while (speed >= NeedSpeed)
         {
-            speed = isMovingFast ? (speed * 0.7f) - Time.deltaTime : (speed * 0.8f) - Time.deltaTime;
+            speed = isMovingFast ? (speed * 0.6f) - Time.deltaTime : (speed * 0.8f) - Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         nearCrash = IsCrash;

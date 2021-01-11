@@ -9,9 +9,10 @@ public class CanvasButtons : MonoBehaviour {
     private Image image;
     private Camera MainCam;
     [SerializeField] private MixerController AudioController;
-    //public Gui guiScript;
+    public Gui guiScript;
 
     void Start() {
+        guiScript = GetComponent<Gui>();
         AudioController = GetComponent<MixerController>();
         MainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         image = GetComponent<Image>();
