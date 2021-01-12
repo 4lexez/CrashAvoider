@@ -280,6 +280,7 @@ MonoBehaviour:
   rightTurn: 0
   leftTurn: 0
   moveFromUp: 0
+  IsPerkUsed: 0
   carRb: {fileID: 0}
   originRotationY: 0
   rotateMultRight: 6
@@ -5536,7 +5537,7 @@ Transform:
   m_GameObject: {fileID: 5846408631050129971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: -0.2, z: 0}
-  m_LocalScale: {x: 1, y: 0.001, z: -0.25}
+  m_LocalScale: {x: 1, y: 0.001, z: 0.4}
   m_Children: []
   m_Father: {fileID: 6605256534945877708}
   m_RootOrder: 1
@@ -5960,7 +5961,7 @@ Transform:
   m_GameObject: {fileID: 8465438562838391893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: -0.2, z: 0}
-  m_LocalScale: {x: 1, y: 0.001, z: -0.25}
+  m_LocalScale: {x: 1, y: 0.001, z: 0.4}
   m_Children: []
   m_Father: {fileID: 5758349931620668023}
   m_RootOrder: 1

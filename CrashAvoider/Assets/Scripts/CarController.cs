@@ -20,6 +20,7 @@ public class CarController : MonoBehaviour {
     [NonSerialized] public static bool isLose;
     public bool isMovingFast, carCrashed, nearCrash;
     public bool rightTurn, leftTurn, moveFromUp;
+    public bool IsPerkUsed;
     #endregion
     #region Rigidbody
     [SerializeField] private Rigidbody carRb;
@@ -73,13 +74,13 @@ public class CarController : MonoBehaviour {
     #region OnCarClick
     private void OnMouseDown()
     {
-        string carName = transform.gameObject.name;
         if (!isMovingFast && !carCrashed && !nearCrash)
         {
             GameObject vfx = Instantiate(exhaust, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.Euler(90, 0, 0)) as GameObject;
             Destroy(vfx, 0.75f);
             speed *= 2f;
             isMovingFast = true;
+            IsPerkUsed = true;
             if (PlayerPrefs.GetString("music") != "No")
             {
                 GetComponent<AudioSource>().clip = accelerates[Random.Range(0, accelerates.Length)];

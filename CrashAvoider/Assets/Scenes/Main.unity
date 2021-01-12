@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 512
+    m_AtlasSize: 1024
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -360,6 +360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RoadBetter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726116245823943605, guid: 0cf572a8cea89fb40b7e11f10665886a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7726116245823943606, guid: 0cf572a8cea89fb40b7e11f10665886a,
         type: 3}
@@ -981,7 +986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 66462896}
         m_MethodName: DeletePrefs
         m_Mode: 1
         m_Arguments:
@@ -1251,7 +1256,7 @@ PrefabInstance:
     - target: {fileID: 6089997067246528672, guid: 97b8de35131cdff409d2ec116d5200e6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97b8de35131cdff409d2ec116d5200e6, type: 3}
@@ -1395,7 +1400,6 @@ MonoBehaviour:
   musicOn: {fileID: 0}
   musicOff: {fileID: 0}
   AudioController: {fileID: 0}
-  guiScript: {fileID: 0}
 --- !u!114 &1362313318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 66462896}
         m_MethodName: PlusCoins
         m_Mode: 1
         m_Arguments:
@@ -2132,7 +2136,6 @@ MonoBehaviour:
   musicOn: {fileID: 0}
   musicOff: {fileID: 0}
   AudioController: {fileID: 0}
-  guiScript: {fileID: 0}
 --- !u!114 &2043011068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2305,6 +2308,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3303768973406343197, guid: fc86df73a9c87f4498fe774a187f8c2a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4508622117822310396, guid: fc86df73a9c87f4498fe774a187f8c2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2364,6 +2372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508622117822310399, guid: fc86df73a9c87f4498fe774a187f8c2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc86df73a9c87f4498fe774a187f8c2a, type: 3}
