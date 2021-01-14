@@ -5,43 +5,45 @@ using UnityEngine.SceneManagement;
 #pragma warning disable 0649
 public class CanvasButtons : MonoBehaviour {
 
-    [SerializeField] private Sprite btn, btnPressed, musicOn, musicOff;
+    [SerializeField] private Sprite btn, btnPressed;
+    [SerializeField] private Canvas canvasSettings, canvasDynamicPanel, canvasStaticPanel;
     private Image image;
     private Camera MainCam;
     [SerializeField] private MixerController AudioController;
-
+    [SerializeField] private Dropdown QualityDropdown;
+    [SerializeField] private Slider Volume;
 
     void Start() {
+        if(Volume)
+            Volume.value = PlayerPrefs.GetFloat("Volume");
+        if (QualityDropdown != null)
+            QualityDropdown.value = PlayerPrefs.GetInt("Quality");
         AudioController = GetComponent<MixerController>();
         MainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         image = GetComponent<Image>();
-        if (gameObject.name == "Music Button") {
-            if (PlayerPrefs.GetString("music") == "No")
-            {
-                transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
-                AudioController.SetVolume(-80);
-            }
+    }
+
+    public void VolumeChange(float volume)
+    {
+        if(volume != PlayerPrefs.GetFloat("Volume"))
+        {
+            AudioController.SetVolume(volume);
+            PlayerPrefs.SetFloat("Volume", volume);
 
         }
     }
-
-    public void MusicButton() {
-        if (AudioController.VolumeValue == -80)
-        { // Turn on
-            PlayerPrefs.SetString("music", "Yes");
-            AudioController.SetVolume(0);
-            transform.GetChild(0).GetComponent<Image>().sprite = musicOn;
-        }
-        else if(AudioController.VolumeValue == 0)
-        { // Turn off
-            PlayerPrefs.SetString("music", "No");
-            AudioController.SetVolume(-80);
-            transform.GetChild(0).GetComponent<Image>().sprite = musicOff;
-        }
-
-        PlayButtonSound();
+    public void QualityChange(int QualityValue)
+    {
+        QualitySettings.SetQualityLevel(QualityValue);
+        PlayerPrefs.SetInt("Quality", QualityValue);
     }
 
+    public void SettingsStatus()
+    {
+        canvasSettings.enabled = !canvasSettings.enabled;
+        canvasStaticPanel.enabled = !canvasStaticPanel.enabled;
+        canvasDynamicPanel.enabled = !canvasDynamicPanel.enabled;
+    }
     public void ShopScene() {
         StartCoroutine(LoadScene("Shop"));
         PlayButtonSound();
